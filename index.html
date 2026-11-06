@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Казаков Родион — веб-разработчик</title>
+<meta name="description" content="Личная страница Казакова Родиона: проекты, опыт и контакты.">
+<style>
+:root{
+  --bg:#e6efe9; --ink:#13201a; --muted:#46594f; --line:#13201a33; --accent:#e8590c; --accent-ink:#fff;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1b15; --ink:#e4efe8; --muted:#9fb5a8; --line:#e4efe833; --accent:#ff8a3d; --accent-ink:#0f1b15}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.0625rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0}
+header.top strong{font-family:var(--serif);font-size:1.15rem}
+nav{display:flex;gap:1.5rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:.3em}
+
+.hero{padding:clamp(3rem,10vw,8rem) 0 clamp(3rem,8vw,6rem)}
+.hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(3.2rem,13vw,9.5rem);line-height:.92;letter-spacing:-.03em;margin:0 0 2rem}
+.hero h1 span{display:block}
+.hero p{max-width:34rem;font-size:1.25rem;color:var(--muted);margin:0 0 2rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.85rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 span{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1 span+span{animation-delay:.12s}
+}
+@keyframes rise{from{opacity:0;transform:translateY(.4em)}to{opacity:1;transform:none}}
+
+section{border-top:1px solid var(--line);padding:3.5rem 0;display:grid;grid-template-columns:12rem 1fr;gap:1.5rem 3rem}
+section h2{font-family:var(--serif);font-size:1.5rem;margin:0;line-height:1.2}
+.about p{margin:0 0 1rem;max-width:40rem}
+.about p:last-child{margin:0}
+
+.rows{list-style:none;margin:0;padding:0}
+.rows li{padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.rows li:first-child{padding-top:0}
+.rows li:last-child{border-bottom:0;padding-bottom:0}
+.rows h3{margin:0;font-size:1.15rem;font-family:var(--serif)}
+.rows h3 a{text-decoration:none}
+.rows h3 a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:.25em}
+.rows p{margin:.25rem 0 0;color:var(--muted);max-width:38rem}
+.rows .year{color:var(--muted);font-variant-numeric:tabular-nums}
+.proj li{display:grid;grid-template-columns:1fr auto;gap:0 1.5rem}
+.proj p{grid-column:1}
+
+.contact a.mail{font-family:var(--serif);font-size:clamp(1.5rem,5vw,2.6rem);font-weight:700;letter-spacing:-.01em;text-decoration-thickness:2px;text-underline-offset:.2em;text-decoration-color:var(--accent)}
+.contact ul{list-style:none;padding:0;margin:1.5rem 0 0;display:flex;gap:1.5rem;flex-wrap:wrap}
+.contact ul a{color:var(--muted)}
+.contact ul a:hover{color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+
+@media (max-width:640px){
+  section{grid-template-columns:1fr;padding:2.5rem 0}
+  nav{gap:1rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong>А. Смирнов</strong>
+    <nav aria-label="Разделы">
+      <a href="#about">Обо мне</a>
+      <a href="#work">Проекты</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1><span>Алексей</span><span>Смирнов</span></h1>
+      <p>Я делаю быстрые и понятные сайты и веб-приложения. Работаю из Таллинна, пишу на удалёнке.</p>
+      <a class="btn" href="#contact">Написать мне</a>
+    </div>
+
+    <section id="about" class="about">
+      <h2>Обо мне</h2>
+      <div>
+        <p>Я веб-разработчик с шестилетним опытом. Начинал с вёрстки, сейчас отвечаю за весь путь: от макета до работающего сайта.</p>
+        <p>Мне нравятся простые интерфейсы, аккуратный код и задачи, где нужно разобраться в чужой предметной области. Вне работы катаюсь на велосипеде и фотографирую.</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Чем занимаюсь</h2>
+      <ul class="rows">
+        <li><h3>Сайты и лендинги</h3><p>Адаптивная вёрстка, доступность, высокая скорость загрузки.</p></li>
+        <li><h3>Веб-приложения</h3><p>JavaScript, TypeScript, React, Node.js, базы данных.</p></li>
+        <li><h3>Доработка существующих проектов</h3><p>Ускорение, рефакторинг, исправление ошибок.</p></li>
+      </ul>
+    </section>
+
+    <section id="work">
+      <h2>Проекты</h2>
+      <ul class="rows proj">
+        <li><h3><a href="#">Сервис бронирования для студии йоги</a></h3><span class="year">2025</span><p>Расписание занятий и онлайн-запись. Конверсия в запись выросла вдвое.</p></li>
+        <li><h3><a href="#">Каталог для небольшого магазина</a></h3><span class="year">2024</span><p>Поиск, фильтры и корзина без лишних зависимостей.</p></li>
+        <li><h3><a href="#">Личный блог о путешествиях</a></h3><span class="year">2023</span><p>Статический сайт с галереями, открывается за доли секунды.</p></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Контакты</h2>
+      <div>
+        <a class="mail" href="mailto:hello@example.com">hello@example.com</a>
+        <ul>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="y">2026</span> Алексей Смирнов</footer>
+</div>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
